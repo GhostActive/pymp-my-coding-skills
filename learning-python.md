@@ -59,5 +59,3 @@ Further Reading:
 
 ## Mastery
 
-Man ist immer Meister oder Experte in einem bestimmten Gebiet, in dem man ein tiefes Wissen in einer Domäne erlangt.
-
