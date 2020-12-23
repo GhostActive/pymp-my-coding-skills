@@ -1,16 +1,19 @@
 # Dictionaries
 
-## Recipe 1: When to use dictionaries, when not to
+* [Item 1](): `dict` vs. `class`
+* [Item 2](): Use `operator.itemgetter` instead of `__getitem__`
+* [Item 3](): Use `itemgetter` only for one context
+* [Item 4](): Get item or default
+* [Item 5](): Walking trough nested dictionaries
+* [Item 6](): Complex operations on dictionaries
+
+## Item 1: `dict` vs. `class`
 
 Dictionaries can be integrated very easy to your code and offers a great flexibility (e.g. as raw input from tools). But as great as the advantages of dictionaries are, they have their downsides. Source code that implements dictionary-based data flows can become very complex and confusing (to understand), which makes in worst case maintenance and (required) extensions impossible. 
 
 If you're an experienced Python3 programmer, then you certainly know strengths of dictionaries and be aware of its shortcomings. Otherwise, it can be a code choice to implement your logic in the classic object-oriented way for the beginning. 
 
-## Recipe 2: Inherate from collection.abc
-
-
-
-## Tip 3: Use `operator.itemgetter` instead of `__getitem__`
+## Item 2: Use `operator.itemgetter` instead of `__getitem__`
 
 The easiest way to obtain a value out of a `dict` is to use the `__getitem__` method.
 
@@ -61,7 +64,7 @@ Getter methods bring some advantages compared to `__getitem__`:
 - Refactoring a method is much easier with support of an IDE, than find and replace all occurrences of magic strings.
 - Getter methods can read multiple values at the same time. This feature is a elegant way for complex operations (e.g. see "Recipe 4: Sort and grouping") and creating views. 
 
-## Recipe 3: Use an `itemgetter` only in one context
+## Item 3: Use `itemgetter` only for one context
 
 In software architecture, this is known as "separation of concerns". And this principle has a very serious reason. Mixing responsibilities can result in unresolvable dependencies among objects, methods, and modules when code is modified, extended, or maintained. Therefore, it is very important to have such situations and dependencies in mind, because afterwards it is often too late and the damage is done.
 
@@ -112,7 +115,7 @@ The above shown approach already shows a general problem of dictionaries: encaps
 
 The problem can be solved only after it is clear that a task can be covered by a dictionary. The dictionary itself is not the problem, but the code complexity as well as the effort of changes to the logic of the data flow, which process the dictionary (see Receipe 1). Otherwise, you're digging your own grave, code line by code line, helper function by helper function.
 
-## Recipe 4: Get item or default
+## Item 4: Get item or default
 
 For optional fields, a dict-based implementation can quickly lead to unwanted behavior. If fields do not necessarily have to exist, the data flow needs a sufficient implementation to handle such circumstances. A simple solution is returning a default value, which is used to replace the non-existence of a value with an empty or standard one. Default values are a great help to avoid rasing errors that interrupt the data flow.
 
@@ -170,7 +173,7 @@ Medium
 ### Conclusion
 Using default values can reduce code complexity and simplify the implementation of the data flow, because unnecessary checks are omitted.Default values allow the implementation to continue in the normal workflow. If necessary, extensions to existing methods are required.
 
-## Recipe 4: Walking trough nested dictionaries
+## Item 5: Walking trough nested dictionaries
 
 Another disadvantage of dictionaries becomes clear when working with nested `dict` objects. The necessary code complexity for reading, processing and error prevention can increase very quickly.
 
@@ -244,7 +247,7 @@ Python offers an elegant way to solve this problem. However, it should also be s
 
 
 
-## Recipe 5: Complex operations on dictionaries
+## Item 6: Complex operations on dictionaries
 **Problem**
 
 How to sort and group a list of of dictionaries effectively?
