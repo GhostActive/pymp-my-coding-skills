@@ -1,11 +1,11 @@
 # Pymp My Coding Skills
 
-*Pymp My Coding Skills* is a collection of tips, tricks and references to get a better Python programmer. In order to understand and properly apply the topics, a basic knowledge of the Python programming language is required. If you are a beginner or have little knowledge, then have a look at [Mastering Python: A Quick Guide](https://github.com/GhostActive/PympMyCodingSkills/blob/main/mastering-python.md).
+*Pymp My Coding Skills* is a collection of tips, tricks and references to get a better Python programmer. In order to understand and properly apply the topics, a basic knowledge of the Python programming language is required. If you are a beginner or have little knowledge, then have a look at [*Mastering Python: A Quick Guide*](https://github.com/GhostActive/PympMyCodingSkills/blob/main/mastering-python.md).
 
 ### Content
 
-* [Mastering Python: A Quick Guide](https://github.com/GhostActive/PympMyCodingSkills/blob/main/mastering-python.md)
-* [Tips and Tricks](https://github.com/GhostActive/PympMyCodingSkills/blob/main/content/README.md)
+* [*Mastering Python: A Quick Guide*](https://github.com/GhostActive/PympMyCodingSkills/blob/main/mastering-python.md) (for beginners and advanced)
+* [*Tips and Tricks*](https://github.com/GhostActive/PympMyCodingSkills/blob/main/content/README.md)
 
 ### Further Reading
 
@@ -16,5 +16,5 @@
 
 ### Similiar Projects
 
-* [Pymp My Pentest](https://github.com/GhostActive/PympMyPentest)
+* [*Pymp My Pentest*](https://github.com/GhostActive/PympMyPentest)
 
