@@ -4,13 +4,13 @@
 
 Mastering the programming language Python consists, as in many other things, of the following four levels:
 
-* [**The Beginning**](#the-beginning)
+* [**The Beginning**](#the-beginning)</br>
 Learn the basics, e.g. the syntax, keywords, data types, classes, functions, etc. and get familiar with the programming language. 
-* [**Transition**](#transition)
+* [**Transition**](#transition)</br>
 Dive into the depths of the standard libraries, other frameworks as well as the concepts of functional and object-oriented programming with Python.
-* [**Practice and Improvement**](#practice-and-improvement)
+* [**Practice and Improvement**](#practice-and-improvement)</br>
 Improve and sharpen your skills. Learn what effectiveness and efficiency in finding solutions for a specific problem means.
-* [**Mastery**](#mastery)
+* [**Mastery**](#mastery)</br>
 Get an expert in a certain field by developing a deep understanding of the specific domain.
 
 How long the process takes depends on your capacity and ability to learn. If you want to be really good, it lasts several years. It's best to find a mentor who is already where you'd like to be and can help you on your journey. But you can also go on your own. All that matters is to start and keep moving forward. 
