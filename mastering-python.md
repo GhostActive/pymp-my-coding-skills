@@ -1,6 +1,6 @@
-# Mastering Python
+# Mastering Python: A Quick Guide
 
-> **Note:** This guide is kept short and simple containing only essentials, which reference the actual content. There are no explicitly goals defined, you must achieve, or time frames to meet. Feel free to develop your skills. The books mentioned in the text are personal recommendations that don't bring any provision.
+> **Note:** This guide is kept short and simple containing only essentials, which reference the actual content. There are no explicitly goals defined, you must achieve, or time frames to meet. Feel free to develop your skills. The publishers and books mentioned in the text are personal recommendations that don't bring any provision.
 
 Mastering the programming language Python consists, as in many other things, of the following four levels:
 
@@ -34,7 +34,7 @@ Python supports various paradigmas. On the one side [*functional programming*](h
 A common principle to save resources like time and money: "Don't reinvent the wheel". For specific tasks, when the standard libraries do not suffice, there are numerous frameworks available, e.g. [*request*](https://3.python-requests.org/), [*django*](https://www.djangoproject.com/) or [*jinja*](https://jinja.palletsprojects.com). For installing third party modules use [*pip*](https://docs.python.org/3/installing/index.html).
 
 Further Reading:
-* [*Python Tricks The Book*](https://www.amazon.com/-/de/dp/1775093301/) by Dan Bader
+* [*Python Tricks The Book*](https://realpython.com/python-tricks-amazon) by Dan Bader
 * [*Fluent Python*](https://www.oreilly.com/library/view/fluent-python/9781491946237/) by Luciano Ramalho
 * [*Python Object-Orientated Programming*](https://www.packtpub.com/product/python-3-object-oriented-programming-third-edition/9781789615852) by Dusty Phillips
 
@@ -58,3 +58,13 @@ Further Reading:
 To achieve *Mastery*, firstly, you must become an expert within certain fields of a specific domain by developing deep understanding. At this point, learning is a livelong process repeating these four stages. Repeating the previous items with a higher level yields also new perspectives and ideas.
 
 *Mastery* is also characterized by providing (simple) domain-specific solutions to complex tasks, which partly also show new ways or even end in new trends. The knowledge and skills then mostly extend beyond pure Python and include, for example, working with large code basis, design or analyse software architectures, maintaining source code including to refactor them.
+
+## Further Resources
+
+The content referenced in the text is, of course, only a very small part. The following section shows how you can discover more topics related to Python. 
+
+A good source for Python projects is [*github.com*](https://https://github.com). However, a more specific query in an online search engine may also yield other interesting content (works for google, startpage, duckduckgo), for example:
+```
+site:github.com awesome python3
+```
+More content can be found, for example, at [*YouTube*](youtube.com), e. g. searching [*Python3 Tricks*](https://www.youtube.com/results?search_query=python3+tricks), or under [*realpython.com*](https://realpython.com/) with many tutorials If you like to read, there are also several publishers that offer books about Python: [*no starch press*](https://nostarch.com/), [*O'Reilly*](https://www.oreilly.com/), [*Packt>*](https://www.packtpub.com/), [*Manning Publications*](https://www.manning.com/). 
