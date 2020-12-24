@@ -312,6 +312,7 @@ The higher the number for priority, the more important a task is.
 {'category': 'Work', 'title': 'Review and publish latest article', 'priority': 4}
 {'category': 'Work', 'title': 'Write article about Python', 'priority': 3}
 ```
+
 The grouping is done implicitly due to the sorting by *category* and can continued, for example, with [itertools.groupby](https://docs.python.org/3/library/itertools.html#itertools.groupby) and `operator.itemgetter("category")` as parameter `key`.
 
 **Example 2** - More complex sorting
@@ -321,6 +322,7 @@ The grouping is done implicitly due to the sorting by *category* and can continu
 * Tasks within a group are also sorted in descending order of *priority*. Tasks of the same *priority* are sorted alphabetically in ascending order by *title*.
 
 First, define two helper functions that do the job:
+
 ```python
 category = operator.itemgetter("category")
 priority = operator.itemgetter("priority")
@@ -341,10 +343,15 @@ def print_current_tasks(tasks):
         for task in tasks[group]:
             print(f"\t{title(task)} (priority={priority(task)})")
 ```
+
 Second, use the helper functions:
+
 ```python
 >>> result = prepare_tasks_for_print([task1, task2, task3, task4])
 >>> print_current_tasks(result)
+```
+Output:
+```
 Learning (1)
 	Read a book about Python (priority=4)
 Work (2)
