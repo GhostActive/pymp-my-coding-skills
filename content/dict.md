@@ -1,123 +1,120 @@
 # Dictionaries
 
-* [Item 1](): `dict` vs. `class`
-* [Item 2](): Use `operator.itemgetter` instead of `__getitem__`
-* [Item 3](): Use `itemgetter` only for one context
-* [Item 4](): Get item or default
-* [Item 5](): Walking trough nested dictionaries
-* [Item 6](): Complex operations on dictionaries
+* [Item 1](#item-1-dict-vs-class): `dict` vs. `class`
+* [Item 2](#item-2-use-operatoritemgetter-instead-of-__getitem__): Use `operator.itemgetter` instead of `__getitem__`
+* [Item 3](#item-3-use-itemgetter-only-for-one-context): Use `itemgetter` only for one context
+* [Item 4](#item-4-get-item-or-default): Get item or default
+* [Item 5](#item-5-walking-trough-nested-dictionaries): Walking trough nested dictionaries
+* [Item 6](#item-6-complex-operations-on-dictionaries): Complex operations on dictionaries
 
 ## Item 1: `dict` vs. `class`
 
-Dictionaries can be integrated very easy to your code and offers a great flexibility (e.g. as raw input from tools). But as great as the advantages of dictionaries are, they have their downsides. Source code that implements dictionary-based data flows can become very complex and confusing (to understand), which makes in worst case maintenance and (required) extensions impossible. 
+When are dictionaries better than classes and vice versa? The programming paradigma used is the key. Both concepts can represent data structures: Classes via attributes and properties, dictionaries via key-value pairs. Classes, however, have all the advantages of object-oriented programming, e.g. encapsulation. Dictionaries are efficient for functional programming due to their simplicity.
 
-If you're an experienced Python3 programmer, then you certainly know strengths of dictionaries and be aware of its shortcomings. Otherwise, it can be a code choice to implement your logic in the classic object-oriented way for the beginning. 
+At first view, classes look like more effort for implementation - evil trap and a popular beginner's mistake. Dictionaries just need the effort in a different way. Dealing with dictionaries can very quickly lead to tragedy, for example, due to the lack of encapsulation and ability of inheritance of contained data structures. As a simple Rule: Classes bring more stability and dictionaries more flexibility. However, the gained flexibility must be protected by a robust implementation that processes the dictionaries. And that's where the trap can catches you and the effort can suddenly become overwhelming by implementing dozens of *free-haning* validation methods, helper functions and so on. As a beginner, this is often difficult to see and correctly calculate due to lack of experience.
+
+### Conclusion
+
+The use of `dict` or `class` depends on the programming paradigm that is used. In practice, however, programming skills are more important. Dictionaries are efficient if you understand functional programming with Python. Otherwise, the implementation can become very complex, confusing or even become unwillingly an imitation of object-oriented programming. If you are a beginner or generally have little experience in functional programming, prefer a class-based implementation, even if dictionaries are more efficient, to avoid structural mistakes and bad smells. The structure of classes may mean additional effort, but it brings more stability.
 
 ## Item 2: Use `operator.itemgetter` instead of `__getitem__`
 
 The easiest way to obtain a value out of a `dict` is to use the `__getitem__` method.
 
 ```python
->>> finding = {"weakness": "SQL Injection"}
->>> finding["weakness"]               # Calls __getitem__("weakness")
-SQL Injection
->>> finding.__getitem__("weakness") 
-SQL Injection
+>>> article = {"title": "Mastering Python: A Quick Guide"}
+>>> article["title"]                        # Calls __getitem__("title")
+'Mastering Python: A Quick Guide'
+>>> article.__getitem__("title")
+'Mastering Python: A Quick Guide'
 ```
 
 ### Short Comings
 
-Usually, when working with instances of `dict`, the method `__getitem__` is quite fine - simple and does its job. But for more complex scenarios the method very quickly reaches its limits:
+Normally, when working with instances of `dict`, the method `__getitem__` is quite fine - simple and does its job. But for more complex scenarios the method very quickly reaches its limits:
 
-- Every call of `__getitem__` expires a `key` argument. Even in small data flows, this creates redundancy and can lead to clutter as well as visual noise.
-- Sometimes when working with `dict` objects, it's more elegant to read more than one value at once, but the method `__getitem__` can only return one value per operation.
-- The method `__getitem__` don't support returning a default value, if the given key doesn't exists within a `dict` (see Recipe X: Get item or default)
+- Every call of `__getitem__` expires a `key` argument. Even within little code base, this creates redundancy that leads to clutter and visual noise.
+- The method `__getitem__` don't support returning a default value, if the given key doesn't exists within a `dict` a `KeyError` is raised (see *[Item 4](#item-4-get-item-or-default): Get item or default*)
+- Sometimes when working with `dict` objects, it's more elegant to read more than one value at once, but the method `__getitem__` can only return one value per operation (see *[Item 6](#item-6-complex-operations-on-dictionaries): Complex operations on dictionaries*).
+
 
 ### Solution
 Definition of a getter method
 ```python
 >>> import operator
->>> weakness = operator.itemgetter("weakness")
->>> weakness
-operator.itemgetter('weakness')
+>>> title = operator.itemgetter("title")
+>>> title
+operator.itemgetter('title')
 ```
-Usage of a getter method
+Using a getter method
 ```python
->>> finding1 = {"weakness": "SQL Injection", "title": "Product search function"}
->>> finding2 = {"weakness": "Cross-Site Scripting", "title": "Contact form"}
->>> weakness(finding1)
-'SQL Injection'
->>> weakness(finding2)
-'Cross-Site Scripting'
+>>> article1 = {"title": "Mastering Python: A Quick Guide"}
+>>> article2 = {"title": "Dictionaries"}
+>>> title(article1)
+'Mastering Python: A Quick Guide'
+>>> title(article2)
+'Dictionaries'
 ```
-A further advantage of `operator.itemgetter` is the initialisation of  getter methods, which read multiple values. If multiple values are read, the getter method returns a `tuple` containing the corresponding values.
+A further advantage of `operator.itemgetter` is reading multiple values per operation. In this case the values are returned as `tuple`.
 ``` python
->>> operator.itemgetter("weakness", "title")(finding1)
-('SQL Injection', 'Product search function')
+>>> article = {"title": "Mastering Python: A Quick Guide", "created":"2020-12-23", "content":"..."}
+>>> operator.itemgetter("title", "created")(article)
+('Mastering Python: A Quick Guide', '2020-12-23')
 ```
-**Note** that the values within the returned tuple are only shallow copies. If an object is mutable, all changes are made on the original instance of the object and can lead to unexpected behavoir of the application.
+**Note** that the values within the returned `tuple` are only shallow copies. If an contained object is mutable, all changes are made on the original instance of the object, too.
 
 ### Conclusion
 Getter methods bring some advantages compared to `__getitem__`:
 - Getter methods can be reused. Therefore the `key` must only be defined once.
 - If the `key` in the data model is changed, only one location in the code must be updated. Even if the name of the getter method is  misleading from now on (until the next refactoring process), the functionality behind the getter method is still working.
-- Refactoring a method is much easier with support of an IDE, than find and replace all occurrences of magic strings.
-- Getter methods can read multiple values at the same time. This feature is a elegant way for complex operations (e.g. see "Recipe 4: Sort and grouping") and creating views. 
+- Getter methods can read multiple values per operation. This feature is sometimes an elegant way for complex operations (see *[Item 6](#item-6-complex-operations-on-dictionaries): Complex operations on dictionaries*). 
 
-## Item 3: Use `itemgetter` only for one context
+## Item 3: Use `operator.itemgetter` only for one context
 
-In software architecture, this is known as "separation of concerns". And this principle has a very serious reason. Mixing responsibilities can result in unresolvable dependencies among objects, methods, and modules when code is modified, extended, or maintained. Therefore, it is very important to have such situations and dependencies in mind, because afterwards it is often too late and the damage is done.
+Mixing responsibilities is very dangarous and can result in large efforts when modifying or extending source code.
 
 ### Problem
-Modifying a dictionary is relatively easy. Only keys or structural elements have to be changed. If objects are loaded from XML, YAML or JSON, for example, no modifications are necessary because the changed object is simply deserialized in its current shape. But for the logic of the data flow, it already looks quite different.
-
- The following example already shows the downside of dictionaries in a small dimension: One getter method is responsible for two different models (report and finding).
+The following example demonstrates this effect in a very small dimension. One getter method is responsible for two different data models (article and reports).
 ```python
 >>> import operator
->>> report = {"title":"Sample Customer Test"}
->>> finding = {"title":"Server-side misconfiguration for HTTP Security Header"}
+>>> article = {"title": "Mastering Python: A Quick Guide"}
+>>> book = {"title": "Refactoring Code"}
 >>> title = operator.itemgetter("title")
->>> title(report)
-'Sample Customer Test'
->>> title(finding)
-'Misconfigured HTTP Security Header'
+>>> title(article)
+'Mastering Python: A Quick Guide'
+>>> title(book)
+'Refactoring Code'
 ```
-
-Imagine after a refactoring process the "title" in model "report" is renamed to "heading".
+Imagine after a refactoring process the "title" in model "article" is renamed to "heading".
 
 ```python
->>> report = {"heading":"Sample Customer Test"}
->>> title(report)
+>>> article = {"heading": "Mastering Python: A Quick Guide"}
+>>> title(article)
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
 KeyError: 'title'
 ```
-The problem is obvious. Also when refactoring the getter method `title([dict])`, the problem can't be solved, because the keys are different.
+The problem is obvious. But also when refactoring the key within the getter method, the problem can't be solved, because the keys are different.
 
 ### Solution
-As a "quick" solution a further getter method is created to handle the changed key name. As  result each model has its own getter method and the data flow works.
+A *quick* solution is to implement a further getter method handling the new key.
 ```python
->>> import operator
->>> report = {"heading":"Sample Customer Test"}
->>> finding = {"title":"Server-side misconfiguration for HTTP Security Header"}
->>> report_title = operator.itemgetter("heading")
->>> finding_title = operator.itemgetter("title")
+>>> article_title = operator.itemgetter("heading")
+>>> report_title = operator.itemgetter("title")
+>>> article_title(article)
+'Mastering Python: A Quick Guide'
 >>> report_title(report)
-'Sample Customer Test'
->>> finding_title(finding)
-'Misconfigured HTTP Security Header'
+' Refactoring Code
 ```
-Why is this only a quick solution? Imagine the data model contains 10, 15, 20, 50 or more keys (e.g. when reading the raw output of tools) - some keys always are existing, some keys are only optional, other ones also contain nested sub-dictionaries. 
+The problem is solved, but another one arises: The code base becomes a bit more cluttered. What happens after the 10th, 20th or 50th modification of this kind? 
 
-The above shown approach already shows a general problem of dictionaries: encapsulation of data - and the loosy approach to build a way around. If such situations occur more often, especially when simple getter methods are created and used, then a class-based implementation should be preferred. Dozens of "free-hanging" getter methods are not more flexible than class implementations. The opposite is true: In the end it is not clear what the getter methods are responsible for and a structured naming convention does not really help.
+## Conclusion
 
-### Conclusion
-
-The problem can be solved only after it is clear that a task can be covered by a dictionary. The dictionary itself is not the problem, but the code complexity as well as the effort of changes to the logic of the data flow, which process the dictionary (see Receipe 1). Otherwise, you're digging your own grave, code line by code line, helper function by helper function.
+Don't mix responsibilities to avoid unwanted dependencies. If such situations occur more often, especially when simple getter methods are created and used, then a class-based implementation should be preferred for more stability. Dozens of *free-hanging* getter or helper functions imitating an object-oriented approach are not more flexible than a solid class implementation.
 
 ## Item 4: Get item or default
 
-For optional fields, a dict-based implementation can quickly lead to unwanted behavior. If fields do not necessarily have to exist, the data flow needs a sufficient implementation to handle such circumstances. A simple solution is returning a default value, which is used to replace the non-existence of a value with an empty or standard one. Default values are a great help to avoid rasing errors that interrupt the data flow.
+For optional fields, a `dict`-based implementation can quickly lead to unwanted behavior. If fields don't exist, the data flow needs a robust implementation to handle such circumstances. A simple solution is returning a default value, which is used to replace the non-existence.
 
 ### Problem
 
@@ -125,92 +122,105 @@ For optional fields, a dict-based implementation can quickly lead to unwanted be
 
 ```python
 >>> import operator
->>> finding = {"title":"Misconfigured HTTP Security Header"}
->>> operator.itemgetter("severity")(finding)
+>>> article = {"title": "Mastering Python: A Quick Guide"}
+>>> operator.itemgetter("author")(article)
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
-KeyError: 'severity'
+KeyError: 'author'
 ```
-The class `dict` offers the method `dict.get(key, default=None)`, but causing some noise and redundancy (see "Recipe 2: Use `operator.itemgetter` instead of `__getitem__`")
+The standard type `dict` offers the method `dict.get(key, default=None)` requiring a `key` argument (analog see *[Item 2](#item-2-use-operatoritemgetter-instead-of-__getitem__): Use `operator.itemgetter` instead of `__getitem__`*)
 ```python
->>> finding = {"title":"Misconfigured HTTP Security Header"}
->>> finding.get("severity", "Unknown")
+>>> article.get("author", "Unknown")
 'Unknown'
 ```
 ### Solution
-A simple solution is a wrapper method to `operator.itemgetter`:
+A simple solution is using [collections.defaultdict](https://docs.python.org/3/library/collections.html#collections.defaultdict). Simple and fast if the default value is always of the same data type.
 ```python
-def default_itemgetter(item, *items, default=None):
+>>> article = defaultdict(str,{"title": "Mastering Python: A Quick Guide"})
+>>> article
+defaultdict(<class 'str'>, {'title': 'Mastering Python: A Quick Guide'})
+>>> article["title"]
+'Mastering Python: A Quick Guide'
+>>> article["author"]
+''
+```
+A little tricky and error prone: If always `collections.defaultdict` is used, you can use `operator.itemgetter`.
+```python
+>>> import operator
+>>> article = defaultdict(str,{"title": "Mastering Python: A Quick Guide"})
+>>> operator.itemgetter("title","author")(article)
+('Mastering Python: A Quick Guide', '')
+```
+A robust solution, for reading multiple values with flexible defaults, is to implement a simple wrapper method:
+```python
+def default_itemgetter(**kwargs):
     """
-    Wrapper method to operator.itemgetter with support for a default
-    value, if an index or key doesn't exist.
+    Wrapper method to operator.itemgetter supporting default values.
     """
+    if kwargs is None:
+        kwargs = dict()
+
     def wrapped(obj):
-        try:
-            return operator.itemgetter(item, *items)(obj)
-        except IndexError:
-            return default
-        except KeyError:
-            return default
+        return operator.itemgetter(*kwargs.keys())(
+            {key: obj.get(key, kwargs[key]) for key in kwargs.keys()})
 
     return wrapped
 ```
+**Note** that the wrapper method, shown above, only supports keys of data type `str`. Furthermore, the value `obj` must be a `dict`-based object.
 ### Examples
 ```python
->>> raw_result = {"rating": "Medium"}
->>> raw_result2 = {}
->>> rating = default_itemgetter("rating",default="Unknown")
->>> rating(raw_result)
-Medium
->>> rating(raw_result2)
-Unknown
->>> default_itemgetter("rating")(raw_result)
-Medium
->>> default_itemgetter("score",default=0.0)(raw_result)
-0.0
+>>> article = {"title": "Mastering Python: A Quick Guide"}
+>>> report = {"heading": "Refactor Code"}
+>>> view = default_itemgetter(title= "Unknown", author= "Anonymous")
+>>> view(article)
+('Mastering Python: A Quick Guide', 'Anonymous')
+>>> view(report)
+('Unknown', 'Anonymous')
 ```
 
 ### Conclusion
-Using default values can reduce code complexity and simplify the implementation of the data flow, because unnecessary checks are omitted.Default values allow the implementation to continue in the normal workflow. If necessary, extensions to existing methods are required.
+Using default values can simpliy the code complexity, because validation checks are reduced to a certain extent. Regardless whether a value exists or not, the implementation can continue with workflow.
 
 ## Item 5: Walking trough nested dictionaries
 
-Another disadvantage of dictionaries becomes clear when working with nested `dict` objects. The necessary code complexity for reading, processing and error prevention can increase very quickly.
+Working with nested dictionaries can produce cluttered and error-prone code, especially if items within the data model are optoinal. The necessary code complexity for reading, processing and error prevention can increase very quickly.
 
 ### Problem
 
-Working with nested dictionaries can produce cluttered and error-prone code - especially if items within the data model are optoinal. 
+Reading values from nested `dict` objects is error prone and creates clutter.
+
 ```python
->>> finding = {"severity":{"cvss":{"rating":"Medium"}}}
->>> finding["severity"]["cvss"]["rating"]
-'Medium'
->>> finding["severity"]["cvss"]["score"]
+>>> article = {"metadata":{"status":{"label":"Draft"}}}
+>>> article["metadata"]["status"]["label"]
+'Draft'
+>>> article["metadata"]["status"]["id"]
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
-KeyError: 'score'
->>> >>> finding["severity"]["simple"]["rating"]
+KeyError: 'id'
+>>> article["metadata"]["tags"]
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
-KeyError: 'simple'
+KeyError: 'tags'
 ```
-Quick shot to avoid rasing `KeyError`
+Quick shot to avoid `KeyError`
 ```python
->>> finding.get("severity", {}).get("cvss", {}).get("score",0.0)
-0.0
->>> finding.get("severity", {}).get("rating", "Medium")
-'Medium'
+>>> article.get("metadata", {}).get("status",{}).get("label","Unknown")
+'Draft'
+>>> article.get("metadata", {}).get("status",{}).get("id",0)
+0
+>>> article.get("metadata", {}).get("tags",[])
+[]
 ```
 
 ### Solution
 
-An elegant solution is to outsource the traversal of a nested dictionary to a helper function that expects a path. The path represents the order of keys to reach the corresponding item.
+An good solution is to create a helper function that expects a path of an nested item.
 
 ```python
 def nested_itemgetter(path, sep = "/", default = None):
     """
-    Returns an equivalent to "operator.itemgetter" with the ability to walk
-    along a given path through a nested dictionary. If a visited key doesn't
-    exist "default" is returned.
+    Getter function walking along the given path through a nested dictionary.
+    If a visited key doesn't exist "default" is returned.
     """
     def walk(item):
         try:
@@ -221,100 +231,99 @@ def nested_itemgetter(path, sep = "/", default = None):
     return walk
 ```
 
-In order that the function works correctly, the following conditions must be ensured:
+In order that the function, shown above, works correctly, the following conditions must be ensured:
 - All keys along the walked path must be strings
 - All visited items while walking trough the nested dictionary must implements `__getitem__` (e.g. like datatype `dict`). Otherwise an `TypeError` will be raised.
 
-The approach shown above only reads one value - but can be extended to support reading multiple paths. If reading more than two or three values from a sub-dictionary, than it's less complex to read the hole sub-dictionary and working on it directly.
+Furthermore the approach only supports reading one value per operaion, but can be extended. If reading more than two or three values from a sub-dictionary, than it's less complex to read the hole sub-dictionary and working on it directly.
 
 ### Examples
 
 ```python
->>> raw_result= {"severity":{"cvss":{"rating":"Medium"}}}
->>> rating = nested_itemgetter("severity/cvss/rating")
->>> rating(raw_result)
-Medium
->>> nested_itemgetter("severity.cvss.rating",sep=".")(raw_result)
-Medium
->>> nested_itemgetter("severity/cvss/score", default=0.0)(raw_result)
-0.0
->>> nested_itemgetter("severity/simple/rating", default="Unknown")(raw_result)
-Unknown
+>>> status = nested_itemgetter("metadata/status/label", default="Unknown")
+>>> status(article)
+'Draft'
+>>> nested_itemgetter("metadata.status.label",sep=".", default="Unknown")(article)
+'Draft'
+>>> nested_itemgetter("metadata.status.id",sep=".", default=0)(article)
+0
 ```
 ### Conclusion
 
-Python offers an elegant way to solve this problem. However, it should also be said at this point that, as already discussed, it is a question of the requirements to your data flow implementation. If a `dict` is the wrong choice, also no elegant helper function can change that fact.
-
-
+The example shows how a smart use of helper functions and some Python knowledge can improve code complexity and readability.  But if a `dict` is the wrong choice to meet the requirements, no helper function can change that fact.
 
 ## Item 6: Complex operations on dictionaries
-**Problem**
+
+This section shows by two examples with increasing complexity how nevertheless simple solutions can be implemented in Python.
+
+**Samples**
+Let's define the following task - The higher the number of priority, the more important the task.
+```python
+>>> task1 = {"category": "Work", "title": "Review and publish latest article", "priority": 4}
+>>> task2 = {"category": "Work", "title": "Write article about Python", "priority": 3}
+>>> task3 = {"category": "Entertainment", "title": "Watch a movie", "priority": 2}
+>>> task4 = {"category": "Learning", "title": "Read a book about Python", "priority": 4}
+```
 
 How to sort and group a list of of dictionaries effectively?
 
-**Example 1**
+**Example 1** - Simple sorting
 
-Sorts a list of findings by "weakness" and "title" in ascending order - Grouping is indirectly done when sorting by "weakness"
+* Group all tasks by *category*.
+* Sort groups alphabetically ascending.
+* Sort all items within a group alphabetically ascending by *title*.
+
 ```python
 >>> import operator
->>> finding1 = {"weakness": "Information Disclosure", "title": "HTTP 'X-Powered-By' Header"}
->>> finding2 = {"weakness": "SQL Injection", "title": "Product search function"}
->>> finding3 = {"weakness": "Cross-Site Scripting", "title": "Contact form"}
->>> finding4 = {"weakness": "Information Disclosure", "title": "HTTP 'Server' Header"}
->>> findings = [finding1, finding2, finding3, finding4]
->>> [print(finding) for finding in sorted(findings, key=operator.itemgetter("weakness","title"))]
-{'weakness': 'Cross-Site Scripting', 'title': 'Contact form'}
-{'weakness': 'Information Disclosure', 'title': "HTTP 'Server' Header"}
-{'weakness': 'Information Disclosure', 'title': "HTTP 'X-Powered-By' Header"}
-{'weakness': 'SQL Injection', 'title': 'Product search function'}
+>>> for task in sorted(tasks, key=operator.itemgetter("category","title")):
+...     print(task)
+... 
+{'category': 'Entertainment', 'title': 'Watch a movie', 'priority': 2}
+{'category': 'Learning', 'title': 'Read a book about Python', 'priority': 4}
+{'category': 'Work', 'title': 'Review and publish latest article', 'priority': 4}
+{'category': 'Work', 'title': 'Write article about Python', 'priority': 3}
 ```
+The grouping is done implicitly due to the sorting by category.
 
-**Example 2**
+**Example 2** - More complex sorting
 
-- Findings are grouped by "weakness".
-- Groups are sorted descending by highest severity within the group.
-- Groups with same highest "severity" are sorted ascending by "title".
-- Findings within a group are also sorted descending by "severity".
-- Findings with same "severity" within a group are sorted ascending by "title", too.
+* Group all tasks by *category*.
+* Sort groups in descending order by *priority*. The *priority* of a group is the *priority* of the most important item of the group. Additionally, sort groups of the same *priority* alphabetically ascending.
+* Tasks within a group are also sorted in descending order of *priority*. Tasks of the same *priority* are sorted alphabetically in ascending order by *title*.
 
+First, define two helper functions that do the job:
 ```python
-def helper_function(iterable):
-    """
-    Returns a dict with grouped findings and sorted by severity and title
-    """
+category = operator.itemgetter("category")
+priority = operator.itemgetter("priority")
+title = operator.itemgetter("title")
+
+def prepare_tasks_for_print(iterable):
     result = defaultdict(list)
 
-    # Broken Recipe 1 to make the example easy to understand
-    # This example also shows the limits of operator.itemgetter,e.g. when
-    # modifying the sort order by adding '-' for reversing
-    for finding in sorted(iterable, key=lambda f: (-f["severity"].value, f["weakness"], f["title"])):
-        result[finding["weakness"]].append(finding)
+    for task in sorted(iterable, key=lambda t: (-priority(t), category(t), title(t))):
+        result[category(task)].append(task)
 
     return result
 
-[...]
+def print_current_tasks(tasks):
+    for group in tasks.keys():
+        print(f"{group} ({len(tasks[group])})")
 
-from pyfindings.rating import Rating
+        for task in tasks[group]:
+            print(f"\t{title(task)} (priority={priority(task)})")
+```
+Second, use the helper functions:
+```python
+>>> result = prepare_tasks_for_print([task1, task2, task3, task4])
+>>> print_current_tasks(result)
+Learning (1)
+	Read a book about Python (priority=4)
+Work (2)
+	Review and publish latest article (priority=4)
+	Write article about Python (priority=3)
+Entertainment (1)
+	Watch a movie (priority=2)
+```
 
-finding1 = {"weakness": "Information Disclosure", "title": "HTTP 'X-Powered-By' Header",
-                     "severity": Rating.NONE}
-finding2 = {"weakness": "SQL Injection", "title": "Product search function", "severity": Rating.HIGH}
-finding3 = {"weakness": "Cross-Site Scripting", "title": "Contact form", "severity": Rating.HIGH}
-finding4 = {"weakness": "Information Disclosure", "title": "HTTP 'Server' Header", "severity": Rating.NONE}
-result = helper_function([finding1, finding2, finding3, finding4])
-
-for group in result.keys():
-    print(f"{group} - ({len(result[group])} Issue(s))")
-    for finding in result[group]:
-        print(f"\t{finding['weakness']} - {finding['title']} ({finding['severity']})")
-```
-Output:
-```
-Cross-Site Scripting - (1 Issue(s))
-	Cross-Site Scripting - Contact form (High)
-SQL Injection - (1 Issue(s))
-	SQL Injection - Product search function (High)
-Information Disclosure - (2 Issue(s))
-	Information Disclosure - HTTP 'Server' Header (None)
-	Information Disclosure - HTTP 'X-Powered-By' Header (None)
-```
+## Conclusion
+Despite the increasing complexity of the example, the complexity of the implementation is still quite simple. However, the solution requires some knowledge about Python and abstraction skills. The trick at this point is not to think of the requirements as a sequence of statements and implement them that way. Abstract thinking from the end is the key. Otherwise, the implementation becomes more complex.
