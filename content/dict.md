@@ -13,7 +13,7 @@ What is the better choice: classes or dictionaries? It depends on the programmin
 
 At first view, classes seems to need more effort for implementation compared to dictionaries. Evil trap and a quickly overlooked pitfall. Dictionaries also needs effort, just in a different way. Dealing with dictionaries can very quickly lead to tragedy, for example, due to the lack of encapsulation and the missing ability of inheritance of the contained data structure. As a simple rule: Classes bring more structure, dictionaries more flexibility. However, the gained flexibility must be protected by a robust implementation processing the dictionaries. And that's the point where the trap can catches you, because the effort suddenly increases strongly, for example, by implementing dozens of *free-hanging* validation methods or helper functions. Especially as a beginner, this phenomenon is difficult to evaluate in its consequence.
 
-To a certain degree, aspects of both paradigms can be integrated into the implementation. Nevertheless, there should be a basic decision which one is dominating. This decision influences the implementation of new feautres at a later time of point. In a functional implementation, it is increasingly difficult to add object-oriented features and vice versa. That's the second point where the trap can catches you, when extending the code base.
+To a certain degree, aspects of both paradigms can be integrated into the implementation. Nevertheless, there should be a basic decision which one is dominating. This decision influences the implementation of new features later. In a functional implementation, it is increasingly difficult to add object-oriented features and vice versa. That's the second point where the trap can catches you, when extending the code base.
 
 ### Conclusion
 
@@ -68,7 +68,7 @@ A further advantage of `operator.itemgetter` is reading multiple values per oper
 ('Mastering Python: A Quick Guide', '2020-12-23')
 ```
 
-**Note** that the values within the returned `tuple` are only shallow copies. If a contained object is mutable, all changes affects the original instance of the object, which can lead to unexpected behaviour.
+**Note** that the values within the returned `tuple` are only shallow copies. If a contained object is mutable, all changes affects the original instance of the object, which can lead to unexpected behavior.
 
 ### Conclusion
 
@@ -79,11 +79,11 @@ Getter methods bring some advantages compared to `__getitem__`:
 
 ## Item 3: Use `operator.itemgetter` only for one context
 
-Mixing responsibilities is very dangarous and can result in large efforts when modifying or extending code afterwards.
+Mixing responsibilities is very dangerous and can result in large efforts when modifying or extending code afterwards.
 
 ### Problem
 
-The following example demonstrates this effect in a very small dimension. One getter method is responsible for two different data models (article and reports).
+The following example demonstrates this effect in a very small dimension. One getter method is responsible for two different data models (articles and books).
 
 ```python
 >>> import operator
@@ -129,7 +129,7 @@ Don't mix responsibilities to avoid unwanted dependencies. Solving dependencies 
 
 ## Item 4: Get item or default
 
-For optional fields, a `dict`-based implementation can quickly lead to unwanted behavior. If fields don't exist, the data flow needs a robust implementation to handle such circumstances. A simple solution is using default value replacing the non-existence.
+For optional fields, a `dict`-based implementation can quickly lead to unwanted behavior. If fields don't exist, the data flow needs a robust implementation to handle such circumstances. A simple solution is using a default value replacing the non-existence.
 
 ### Problem
 
@@ -163,7 +163,7 @@ defaultdict(<class 'str'>, {'title': 'Mastering Python: A Quick Guide'})
 >>> article["author"]
 ''
 ```
-A less robust solution: Using `collections.defaultdict` also `operator.itemgetter` doesn't raise errors
+A less robust solution: If using `collections.defaultdict`, then `operator.itemgetter` doesn't raise errors
 
 ```python
 >>> import operator
@@ -205,11 +205,11 @@ def default_itemgetter(**kwargs):
 
 ### Conclusion
 
-Using default values can simpliy the code complexity, because validation checks can be reduced. Regardless whether a value exists or not, the workflow can continue at runtime without raising errors or unexpected behaviour.
+Using default values can simplify the code complexity, because validation checks can be reduced. Regardless whether a value exists or not, the workflow can continue at runtime without raising errors or unexpected behavior.
 
 ## Item 5: Walking trough nested dictionaries
 
-Working with nested dictionaries can produce cluttered and error-prone code, especially if items within the data model are optoinal. The necessary code complexity for reading, processing and error prevention can increase very quickly.
+Working with nested dictionaries can produce cluttered and error-prone code, especially if items within the data model are optional. The necessary code complexity for reading, processing and error prevention can increase very quickly.
 
 ### Problem
 
