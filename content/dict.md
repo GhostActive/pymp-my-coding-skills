@@ -1,7 +1,7 @@
 # Dictionaries
 
 * [Item 1](#item-1-dict-vs-class): `dict` vs. `class`
-* [Item 2](#item-2-use-operatoritemgetter-instead-of-__getitem__): Use `operator.itemgetter` instead of `__getitem__`
+* [Item 2](#item-2-prefer-operatoritemgetter-over-__getitem__): Prefer `operator.itemgetter` over `__getitem__`
 * [Item 3](#item-3-use-operatoritemgetter-only-for-one-context): Use `operator.itemgetter` only for one context
 * [Item 4](#item-4-get-item-or-default): Get item or default
 * [Item 5](#item-5-walking-trough-nested-dictionaries): Walking trough nested dictionaries
@@ -19,7 +19,7 @@ To a certain degree, aspects of both paradigms can be integrated into the implem
 
 The use of `dict` or `class` depends on the programming paradigm. Practically, however, programming skills are more important then the theory behind. Dictionaries are efficient if you understand functional programming. Otherwise, the implementation can become very complex, confusing or even an imitation of object-oriented style. In this case use a class-based implementation.
 
-## Item 2: Use `operator.itemgetter` instead of `__getitem__`
+## Item 2: Prefer `operator.itemgetter` over `__getitem__`
 
 The easiest way to obtain a value out of a `dict` is to use the `__getitem__` method.
 
@@ -42,6 +42,7 @@ Normally, when working with instances of `dict`, the method `__getitem__` is qui
 ### Solution
 
 Definition of a getter method
+
 ```python
 >>> import operator
 >>> title = operator.itemgetter("title")
@@ -66,16 +67,44 @@ A further advantage of `operator.itemgetter` is reading multiple values per oper
 >>> article = {"title": "Mastering Python: A Quick Guide", "created":"2020-12-23", "content":"..."}
 >>> operator.itemgetter("title", "created")(article)
 ('Mastering Python: A Quick Guide', '2020-12-23')
+>>> keys = ["title", "created"]
+>>> operator.itemgetter(*keys)(article)
+('Mastering Python: A Quick Guide', '2020-12-23')
 ```
 
 **Note** that the values within the returned `tuple` are only shallow copies. If a contained object is mutable, all changes affects the original instance of the object, which can lead to unexpected behavior.
 
+## Example
+
+The following examples shows, how to find same content over a list of specified keys in both variations. The use of `operator.itemgetter` looks a little more harmonic.
+
+```python
+# Helper function from https://docs.python.org/3/library/itertools.html#itertools-recipes
+def all_equal(iterable, key=None):
+    "Returns True if all the elements are equal to each other"
+    g = itertools.groupby(iterable, key=key)
+    return next(g, True) and not next(g, False)
+```
+
+```python
+>>> article1 = {"title": "Mastering Python: A Quick Guide", "created": "2020-12-26", "status": "Final"}
+>>> article2 = {"title": "Refactoring Python Code", "created": "2020-12-26", "status": "Draft"}
+>>> article3 = {"title": "Functional Programming with Python", "created": "2020-12-26"}
+>>> articles = [article1, article2, article3]
+>>> relevant = ["title", "created"]
+>>> [key for key in relevant if all_equal(articles, key=operator.itemgetter(key))]
+['created']
+>>> [key for key in relevant if all_equal(articles, key=lambda x: x[key])]
+['created']
+```
 ### Conclusion
 
 Getter methods bring some advantages compared to `__getitem__`:
 - Getter methods can be reused. Therefore the `key` must only be defined once.
 - If the `key` in the data model is changed, only one location per getter method in the code must be updated. Even if the name of the getter method is  misleading by changes, the functionality behind the getter method is still working.
 - Getter methods can read multiple values per operation. This feature is sometimes an elegant way for complex operations (see *[Item 6](#item-6-complex-operations-on-dictionaries): Complex operations on dictionaries*). 
+
+However, if the use of `operator.itemgetter` tends to increase complexity unnecessarily, then `__getitem__` or `dict.get(key,default)` should be used.
 
 ## Item 3: Use `operator.itemgetter` only for one context
 
@@ -144,7 +173,7 @@ Traceback (most recent call last):
 KeyError: 'author'
 ```
 
-The standard type `dict` offers the method `dict.get(key, default=None)` requiring a `key` argument and a further default value as optional parameter (analogue see *[Item 2](#item-2-use-operatoritemgetter-instead-of-__getitem__): Use `operator.itemgetter` instead of `__getitem__`*).
+The standard type `dict` offers the method `dict.get(key, default=None)` requiring a `key` argument and a further default value as optional parameter (analogue see *[Item 2](#item-2-prefer-operatoritemgetter-over-__getitem__): Prefer `operator.itemgetter` over `__getitem__`*).
 
 ```python
 >>> article.get("author", "Unknown")
@@ -154,6 +183,7 @@ The standard type `dict` offers the method `dict.get(key, default=None)` requiri
 ### Solution
 
 A simple solution is using [collections.defaultdict](https://docs.python.org/3/library/collections.html#collections.defaultdict), if the default value always is of the same data type.
+
 ```python
 >>> article = defaultdict(str,{"title": "Mastering Python: A Quick Guide"})
 >>> article
@@ -163,6 +193,7 @@ defaultdict(<class 'str'>, {'title': 'Mastering Python: A Quick Guide'})
 >>> article["author"]
 ''
 ```
+
 A less robust solution: If using `collections.defaultdict`, then `operator.itemgetter` doesn't raise errors
 
 ```python
@@ -228,7 +259,9 @@ Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
 KeyError: 'tags'
 ```
+
 Quick shot to avoid `KeyError`
+
 ```python
 >>> article.get("metadata", {}).get("status",{}).get("label","Unknown")
 'Draft'
@@ -350,7 +383,9 @@ Second, use the helper functions:
 >>> result = prepare_tasks_for_print([task1, task2, task3, task4])
 >>> print_current_tasks(result)
 ```
+
 Output:
+
 ```
 Learning (1)
 	Read a book about Python (priority=4)
@@ -363,4 +398,4 @@ Entertainment (1)
 
 ## Conclusion
 
-Despite the increasing complexity of the examples, the complexity of the solutions are still quite simple. However, the solutions require some knowledge about Python and abstraction. The trick at this point is not to think of the requirements as a ordered sequence of statements for implementation. Abstract thinking from the end is the key.
+Despite the increasing complexity of the examples, the complexity of the solutions are still quite simple. However, the solutions require some knowledge about Python and abstraction. The trick at this point is not to think of the requirements as a ordered sequence of statements for implementation. Abstract thinking from the end is the key. The [functional programming modules](https://docs.python.org/3/library/functional.html) can be useful for implementation including further recipes.
