@@ -1,6 +1,6 @@
 # Mastering Python: A Quick Guide
 
-> **Note:** This guide is kept short and simple containing only essentials, which reference the actual content. There are no explicitly goals defined, you must achieve, or time frames to meet. Feel free to develop your skills. The publishers and books mentioned in the text are personal recommendations that don't bring any provision.
+> **Note:** This guide is kept short and simple containing only essentials, which reference the actual content. There are no explicitly goals defined, you must achieve, or time frames to meet. Feel free to develop your skills.
 
 Mastering the programming language Python consists, as in many other things, of the following four levels:
 
@@ -13,7 +13,7 @@ Improve and sharpen your skills. Learn what effectiveness and efficiency in the 
 * [**Mastery**](#mastery)</br>
 Get an expert in certain fields by developing a deep understanding of a specific domain.
 
-How long the process takes depends on your capacity and ability to learn. If you want to be really good, it lasts several years. It's best to find a mentor who is already where you'd like to be and can help you on your journey. But you can also go on your own. All that matters is to start and keep moving forward. 
+How long the process takes depends on your capacity and ability to learn. If you want to be really good, it lasts several years. It's best to find a mentor who is already where you'd like to be and can help you on your journey. But you can also go on your own. All that matters is to start and keep moving forward.
 
 ## The Beginning 
  
@@ -31,16 +31,16 @@ Besides [*built-in types*](https://docs.python.org/3/library/stdtypes.html), [*b
 
 Python supports various programming paradigms. On the one side [*functional programming*](https://docs.python.org/3/howto/functional.html) is supported with the [*modules*](https://docs.python.org/3/library/functional.html) [*itertools*](https://docs.python.org/3/library/itertools.html), [*functools*](https://docs.python.org/3/library/functools.html) and [*operator*](https://docs.python.org/3/library/operator.html) containing higher-order functions. On the other hand Python is an object-oriented programming language with its use of [*class*](https://docs.python.org/3/tutorial/classes.html), see also abstract base classes - [*abc*](https://docs.python.org/3/library/abc.html) module. The behavior of classes can be customized by [*descriptors*](https://docs.python.org/3/howto/descriptor.html).
 
-A common principle to save resources like time and money: "Don't reinvent the wheel". For specific tasks, when the standard libraries don't be enough, there are numerous frameworks available, e.g. [*request*](https://3.python-requests.org/), [*django*](https://www.djangoproject.com/) or [*jinja*](https://jinja.palletsprojects.com). For installing third party modules use [*pip*](https://docs.python.org/3/installing/index.html).
+A common principle to save resources like time and money: "Don't reinvent the wheel". For specific tasks, when the standard libraries don't be enough, there are numerous frameworks available, e.g. [*requests*](https://3.python-requests.org/), [*django*](https://www.djangoproject.com/) or [*jinja*](https://jinja.palletsprojects.com). For installing third party modules use [*pip*](https://docs.python.org/3/installing/index.html).
 
 Further Reading:
 * [*Python Tricks The Book*](https://realpython.com/python-tricks-amazon) by Dan Bader
 * [*Fluent Python*](https://www.oreilly.com/library/view/fluent-python/9781491946237/) by Luciano Ramalho
 * [*Python Object-Orientated Programming*](https://www.packtpub.com/product/python-3-object-oriented-programming-third-edition/9781789615852) by Dusty Phillips
 
-## Practice and Improvement 
+## Practice and Improvement
 
-The last two levels, *The Beginning* and *Transition*, were about content, for example, syntax, features and modules. This section, *Practice and Improvement*, and the next level *Mastery* are about context, the big picture, and *"clean code"*. Two good clues to producing *"clean code"* and *"clean architecture"* are effectiveness and efficiency:
+The last two sections, *The Beginning* and *Transition*, were about content, for example, syntax, features and modules. This section, *Practice and Improvement*, and the next one, *Mastery*, are about context, the big picture, and *"clean code"*. Two good clues to producing *"clean code"* and *"clean architecture"* are effectiveness and efficiency:
 
 * Effectiveness - What are the correct items (e.g. build-ins, modules or frameworks) to build a good solution?
 * Efficiency - What does a good solution looks like?
@@ -64,7 +64,9 @@ To achieve *Mastery*, firstly, you must become an expert within certain fields o
 The content referenced in the text is, of course, only a very small part. The following section shows how you can discover more topics related to Python. 
 
 A good source for Python projects is [*github.com*](https://https://github.com). However, using online search engine may also yield other interesting content, for example (works for google, startpage, duckduckgo):
+
 ```
 site:github.com awesome python3
 ```
+
 More content can be found, for example, at [*YouTube*](https://youtube.com), e. g. searching [*Python3 Tricks*](https://www.youtube.com/results?search_query=python3+tricks) or under [*realpython.com*](https://realpython.com/) with many tutorials. If you like to read,there are several publishers that offer books about Python: [*no starch press*](https://nostarch.com/), [*O'Reilly*](https://www.oreilly.com/), [*Packt>*](https://www.packtpub.com/), [*Manning Publications*](https://www.manning.com/). 
