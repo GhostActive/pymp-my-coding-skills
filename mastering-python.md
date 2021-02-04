@@ -2,10 +2,22 @@
 
 > **Note:** This guide is kept short and simple containing only essentials, which reference the actual content. There are no explicit goals or deadlines defined, you must achieve - Feel free to develop your skills.
 
+
+## Content
+
+- [Introduction](#introduction)
+- [Level 1](#the-beginning): The Beginning
+- [Level 2](#transition): Transition
+- [Level 3](#practice-and-improvement): Practice and Improvement
+- [Level 4](#mastery): Mastery
+- [Further Resources](#further-resources)
+
+## Introduction
+
 Mastering the programming language Python consists, as in many other things, of the following four levels:
 
 * [*The Beginning*](#the-beginning)</br>
-Get familiar with the programming language and learn the basics, for example, the syntax, keywords, data types and structures, ... . 
+Get familiar with the programming language and learn the basics, for example, the syntax, keywords, data types and structures, ... .
 * [*Transition*](#transition)</br>
 Work your way into the standard libraries, other frameworks as well as the concepts of functional and object-oriented programming with Python.
 * [*Practice and Improvement*](#practice-and-improvement)</br>
@@ -35,7 +47,8 @@ Besides [*built-in types*](https://docs.python.org/3/library/stdtypes.html), [*b
 
 Python supports various programming paradigms: On the one side [*functional programming*](https://docs.python.org/3/howto/functional.html) is supported by the [*modules*](https://docs.python.org/3/library/functional.html) [*itertools*](https://docs.python.org/3/library/itertools.html), [*functools*](https://docs.python.org/3/library/functools.html) and [*operator*](https://docs.python.org/3/library/operator.html) containing higher-order functions. On the other hand Python is an object-oriented programming language with its use of [*class*](https://docs.python.org/3/tutorial/classes.html)-based approach (see also [*abstract base classes*](https://docs.python.org/3/library/abc.html)). The behavior of classes can be customized by [*descriptors*](https://docs.python.org/3/howto/descriptor.html).
 
-Further Reading:
+**Further Reading**
+
 * [*Python Tricks The Book*](https://realpython.com/python-tricks-amazon) by Dan Bader
 * [*Fluent Python*](https://www.oreilly.com/library/view/fluent-python/9781491946237/) by Luciano Ramalho
 * [*Python Object-Orientated Programming*](https://www.packtpub.com/product/python-3-object-oriented-programming-third-edition/9781789615852) by Dusty Phillips
@@ -53,7 +66,8 @@ Implicitly, both terms covers numerous dimensions in software development, e.g. 
 
 Building a solid foundation requires practice by reading other's code, writing own code and refactor bad code. Improvement comes with the analysis of existing solutions and finding a better one. Furthermore, to find a good or even the best solution requires beside knowledge and skills the third keystone: Experience - The ability to know what not to do. Always have the inner attitude to produce *"clean code"*, including useful documentation and testing.
 
-Further Reading:
+**Further Reading**
+
 * [*Effective Python*](https://www.oreilly.com/library/view/effective-python-90/9780134854717/) by Brett Slatkin
 * [*Clean Code in Python*](https://www.packtpub.com/product/clean-code-in-python/9781788835831) by Mariano Anaya
 
