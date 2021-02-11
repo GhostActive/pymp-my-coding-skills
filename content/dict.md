@@ -74,7 +74,7 @@ A further advantage of `operator.itemgetter` is reading multiple values per oper
 
 **Note** that the values within the returned `tuple` are only shallow copies. If a contained object is mutable, all changes affects the original instance of the object, which can lead to unexpected behavior.
 
-## Example
+### Example
 
 The following examples shows, how to find same content over a list of specified keys in both variations. The use of `operator.itemgetter` looks a little more harmonic.
 
@@ -152,7 +152,7 @@ A *quick* solution is to implement a further getter method handling the new key.
 
 The problem is solved, but another one arises: The source code becomes a bit more cluttered. What happens after the 10th, 20th or 50th modification of this kind?
 
-## Conclusion
+### Conclusion
 
 Don't mix responsibilities to avoid unwanted dependencies. Solving dependencies can lead to a great effort for refactoring the source code. Especially, if such situations occur more often, then it's an indicator for the imitation of object-oriented programming. Dozens of *free-hanging* getter, validation or helper functions are not less effort than a solid class implementation.
 
@@ -396,6 +396,6 @@ Entertainment (1)
 	Watch a movie (priority=2)
 ```
 
-## Conclusion
+### Conclusion
 
 Despite the increasing complexity of the examples, the complexity of the solutions are still quite simple. However, the solutions require some knowledge about Python and abstraction. The trick at this point is not to think of the requirements as a ordered sequence of statements for implementation. Abstract thinking from the end is the key. The [*functional programming modules*](https://docs.python.org/3/library/functional.html) can be useful for implementation including further recipes.
