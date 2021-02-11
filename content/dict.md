@@ -1,11 +1,11 @@
 # Dictionaries
 
-* [Item 1](#item-1-dict-vs-class): `dict` vs. `class`
-* [Item 2](#item-2-prefer-operatoritemgetter-over-__getitem__): Prefer `operator.itemgetter` over `__getitem__`
-* [Item 3](#item-3-use-operatoritemgetter-only-for-one-context): Use `operator.itemgetter` only for one context
-* [Item 4](#item-4-get-item-or-default): Get item or default
-* [Item 5](#item-5-walking-trough-nested-dictionaries): Walking trough nested dictionaries
-* [Item 6](#item-6-complex-operations-on-dictionaries): Complex operations on dictionaries
+* [*Item 1*](#item-1-dict-vs-class): `dict` vs. `class`
+* [*Item 2*](#item-2-prefer-operatoritemgetter-over-__getitem__): Prefer `operator.itemgetter` over `__getitem__`
+* [*Item 3*](#item-3-use-operatoritemgetter-only-for-one-context): Use `operator.itemgetter` only for one context
+* [*Item 4*](#item-4-get-item-or-default): Get item or default
+* [*Item 5*](#item-5-walking-trough-nested-dictionaries): Walking trough nested dictionaries
+* [*Item 6*](#item-6-complex-operations-on-dictionaries): Complex operations on dictionaries
 
 ## Item 1: `dict` vs. `class`
 
@@ -182,7 +182,7 @@ The standard type `dict` offers the method `dict.get(key, default=None)` requiri
 
 ### Solution
 
-A simple solution is using [collections.defaultdict](https://docs.python.org/3/library/collections.html#collections.defaultdict), if the default value always is of the same data type.
+A simple solution is using [*collections.defaultdict*](https://docs.python.org/3/library/collections.html#collections.defaultdict), if the default value always is of the same data type.
 
 ```python
 >>> article = defaultdict(str,{"title": "Mastering Python: A Quick Guide"})
@@ -346,7 +346,7 @@ The higher the number for priority, the more important a task is.
 {'category': 'Work', 'title': 'Write article about Python', 'priority': 3}
 ```
 
-The grouping is done implicitly due to the sorting by *category* and can continued, for example, with [itertools.groupby](https://docs.python.org/3/library/itertools.html#itertools.groupby) and `operator.itemgetter("category")` as parameter `key`.
+The grouping is done implicitly due to the sorting by *category* and can continued, for example, with [*itertools.groupby*](https://docs.python.org/3/library/itertools.html#itertools.groupby) and `operator.itemgetter("category")` as parameter `key`.
 
 **Example 2** - More complex sorting
 
@@ -398,4 +398,4 @@ Entertainment (1)
 
 ## Conclusion
 
-Despite the increasing complexity of the examples, the complexity of the solutions are still quite simple. However, the solutions require some knowledge about Python and abstraction. The trick at this point is not to think of the requirements as a ordered sequence of statements for implementation. Abstract thinking from the end is the key. The [functional programming modules](https://docs.python.org/3/library/functional.html) can be useful for implementation including further recipes.
+Despite the increasing complexity of the examples, the complexity of the solutions are still quite simple. However, the solutions require some knowledge about Python and abstraction. The trick at this point is not to think of the requirements as a ordered sequence of statements for implementation. Abstract thinking from the end is the key. The [*functional programming modules*](https://docs.python.org/3/library/functional.html) can be useful for implementation including further recipes.

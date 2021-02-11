@@ -8,7 +8,7 @@
 
 > **For Beginner**: [*Mastering Python: A Quick Guide*](https://github.com/GhostActive/PympMyCodingSkills/blob/main/mastering-python.md)
 
-* [dict](https://github.com/GhostActive/PympMyCodingSkills/blob/main/content/dict.md) - Working with standard type [dictionary](https://docs.python.org/3/library/stdtypes.html#mapping-types-dict)
+* [*dict*](https://github.com/GhostActive/PympMyCodingSkills/blob/main/content/dict.md) - Working with standard type [*dictionary*](https://docs.python.org/3/library/stdtypes.html#mapping-types-dict)
 
 ### Booklist
 

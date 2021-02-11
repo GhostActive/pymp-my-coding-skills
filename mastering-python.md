@@ -3,14 +3,14 @@
 > **Note:** This guide is kept short and simple containing only essentials, which reference the actual content. There are no explicit goals or deadlines defined, you must achieve - Feel free to develop your skills.
 
 
-## Content
+### Content
 
-- [Introduction](#introduction)
-- [Level 1](#the-beginning): The Beginning
-- [Level 2](#transition): Transition
-- [Level 3](#practice-and-improvement): Practice and Improvement
-- [Level 4](#mastery): Mastery
-- [Further Resources](#further-resources)
+- [*Introduction*](#introduction)
+- [*Level 1*](#the-beginning): The Beginning
+- [*Level 2*](#transition): Transition
+- [*Level 3*](#practice-and-improvement): Practice and Improvement
+- [*Level 4*](#mastery): Mastery
+- [*Further Resources*](#further-resources)
 
 ## Introduction
 
