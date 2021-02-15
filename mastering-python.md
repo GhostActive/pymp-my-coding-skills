@@ -3,7 +3,7 @@
 > **Note:** This guide is kept short and simple containing only essentials, which reference the actual content. There are no explicit goals or deadlines defined, you must achieve - Feel free to develop your skills.
 
 
-### Content
+## Content
 
 - [*Introduction*](#introduction)
 - [*Level 1*](#the-beginning): The Beginning
@@ -33,11 +33,15 @@ How long the process takes to become a master depends on your capacity and abili
 
 > **Note:** At the beginning, it can quickly become a mass of things to learn so you feel overwhelmed and stupid. Take the time you need - One topic at a time, not all at once.
 
-If you're new, than first things first. Learn the basics and core principles about Python. A simple way to start is working through the [*Tutorial*](https://docs.python.org/3.8/tutorial/index.html) within the [*Python Documentation*](https://docs.python.org/3/). The official documentation contains a lot of useful knowledge and is worth a look. Alternatively, there are a lots of stuff on [*YouTube*](https://www.youtube.com/results?search_query=python3+tutorial) or within online courses. If you prefer reading than have a look to Mark Lutz's [*Learning Python*](https://www.oreilly.com/library/view/learning-python-5th/9781449355722/). As an IDE [*PyCharm*](https://www.jetbrains.com/pycharm/) is a good choice - The community edition is free available.
+If you're new, than first things first. Learn the basics and core principles about Python. A simple way to start is working through the [*Tutorial*](https://docs.python.org/3.8/tutorial/index.html) within the [*Python Documentation*](https://docs.python.org/3/). The official documentation contains a lot of useful knowledge and is worth a look. Alternatively, there are a lots of stuff on [*YouTube*](https://www.youtube.com/results?search_query=python3+tutorial) or within online courses. If you prefer reading than have a look to Mark Lutz's *Learning Python* (see *Further Reading*). As an IDE [*PyCharm*](https://www.jetbrains.com/pycharm/) is a good choice - The community edition is free available.
 
 For a good programming style you should also know the following [*Python Enhancement Proposals*](https://www.python.org/dev/peps/) (PEPs):
 * [*PEP 8 - Style Guide for Python Code*](https://www.python.org/dev/peps/pep-0008/)
 * [*PEP 20 - The Zen of Python*](https://www.python.org/dev/peps/pep-0020/)
+
+**Further Reading**
+
+* [*Learning Python*](https://www.oreilly.com/library/view/learning-python-5th/9781449355722/) by Mark Lutz
 
 ## Transition
 
