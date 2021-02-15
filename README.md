@@ -2,7 +2,7 @@
 
 > **Disclaimer**: The publishers and books mentioned in the repository are a personal choice that don't bring any provision.
 
-*Pymp My Coding Skills* is a collection of tips, tricks and references to improve your programming skills. The content of this repository is intended for advanced programmers and requires a solid foundation knowledge about Python - Comparable to *Level 2* of [*Mastering Python: A Quick Guide*](https://github.com/GhostActive/PympMyCodingSkills/blob/main/mastering-python.md). If you are not at this level yet, then it's recommended to work through the contents of *Level 1* and *Level 2*.
+*Pymp My Coding Skills* is a collection of tips, tricks and references to improve your programming skills in Python. The content of this repository is intended for advanced programmers and requires a solid foundation knowledge about Python - Comparable to Level 2 in [*Mastering Python: A Quick Guide*](https://github.com/GhostActive/PympMyCodingSkills/blob/main/mastering-python.md). If you are not at this level yet, then it's recommended to work through the content of Level 1 and 2 to understand the topics discussed completely and apply them correctly.
 
 ## Content
 
