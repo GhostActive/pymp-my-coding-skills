@@ -17,21 +17,21 @@
 Mastering the programming language Python consists, as in many other things, of the following four levels:
 
 * [*The Beginning*](#the-beginning)</br>
-Get familiar with the programming language and learn the basics, for example, the syntax, keywords, data types and structures, ... .
+Get familiar with the programming language and learn the basics, for example, the syntax, keywords, data types and structures.
 * [*Transition*](#transition)</br>
-Work your way into the standard libraries, other frameworks as well as the concepts of functional and object-oriented programming with Python.
+Work your way into the standard libraries, other frameworks as well as the concepts of functional and object-oriented programming.
 * [*Practice and Improvement*](#practice-and-improvement)</br>
-Improve and sharpen your skills. Learn what effectiveness and efficiency in the context of scripting and software development means.
+Improve and sharpen your skills: Learn what effectiveness and efficiency in the context of scripting and software development means.
 * [*Mastery*](#mastery)</br>
 Get an expert in certain fields by developing a deep understanding of a specific domain.
 
-How long the process takes to become a master depends on your capacity and ability to learn. If you want to be really good, it lasts several years - start and keep moving forward. Maybe you have someone who can support you in learning.
+How long the process takes to become a *master* depends on your ability and capacity to learn. If you want to be really good, it lasts several years. Maybe you have someone who can support you. But the most important thing: Start and keep moving forward.
 
 ## The Beginning 
 
-> **Characteristics**: Short phase of 1 to 3 months, rapid knowledge building
-
-> **Note:** At the beginning, it can quickly become a mass of things to learn so you feel overwhelmed and stupid. Take the time you need - One topic at a time, not all at once.
+> **Characteristics**: Phase of 1 to 3 months with rapid knowledge building
+>
+> **Note**: Be careful. At the beginning, it can quickly become a mass of things to learn so you feel overwhelmed and stupid. Take the time you need - One topic at a time, not all at once.
 
 If you're new, than first things first. Learn the basics and core principles about Python. A simple way to start is working through the [*Tutorial*](https://docs.python.org/3.8/tutorial/index.html) within the [*Python Documentation*](https://docs.python.org/3/). The official documentation contains a lot of useful knowledge and is worth a look. Alternatively, there are a lots of stuff on [*YouTube*](https://www.youtube.com/results?search_query=python3+tutorial) or within online courses. If you prefer reading than have a look to Mark Lutz's *Learning Python* (see *Further Reading*). As an IDE [*PyCharm*](https://www.jetbrains.com/pycharm/) is a good choice - The community edition is free available.
 
@@ -45,11 +45,11 @@ For a good programming style you should also know the following [*Python Enhance
 
 ## Transition
 
-> **Characteristics**: Lasts up to one and a half years, steep learning curve
+> **Characteristics**: May last up to one year - Basic and advanced education about Pyhton with a steep learning curve
 
-Besides [*built-in types*](https://docs.python.org/3/library/stdtypes.html), [*built-in functions*](https://docs.python.org/3/library/functions.html) and [*built-in exceptions*](https://docs.python.org/3/library/exceptions.html) Python offers many modules within the [*standard libraries*](https://docs.python.org/3/library/index.html) for use, e.g.  [*string*](https://docs.python.org/3/library/string.html), [*enum*](https://docs.python.org/3/library/enum.html), [*collections*](https://docs.python.org/3/library/collections.html), [*argparse*](https://docs.python.org/3/library/argparse.html), [*sys*](https://docs.python.org/3/library/sys.html), [*os*](https://docs.python.org/3/library/os.html), [*logging*](https://docs.python.org/3/library/logging.html), [*subprocess*](https://docs.python.org/3/library/subprocess.html), [*json*](https://docs.python.org/3/library/json.html) and many more. If the standard libraries are not enough, then there are numerous frameworks from third parties like [*requests*](https://3.python-requests.org/), [*django*](https://www.djangoproject.com/) or [*jinja*](https://jinja.palletsprojects.com) - *Don't reinvent the wheel* to avoid mistakes and save resources. For installing third party modules use [*pip*](https://docs.python.org/3/installing/index.html).
+Besides [*built-in types*](https://docs.python.org/3/library/stdtypes.html), [*built-in functions*](https://docs.python.org/3/library/functions.html) and [*built-in exceptions*](https://docs.python.org/3/library/exceptions.html) Python offers many modules within the [*standard libraries*](https://docs.python.org/3/library/index.html) for use, e.g.  [*string*](https://docs.python.org/3/library/string.html), [*enum*](https://docs.python.org/3/library/enum.html), [*collections*](https://docs.python.org/3/library/collections.html), [*argparse*](https://docs.python.org/3/library/argparse.html), [*sys*](https://docs.python.org/3/library/sys.html), [*os*](https://docs.python.org/3/library/os.html), [*logging*](https://docs.python.org/3/library/logging.html), [*subprocess*](https://docs.python.org/3/library/subprocess.html), [*json*](https://docs.python.org/3/library/json.html) and many more. If the standard libraries are not enough, then there are numerous frameworks from third parties like [*requests*](https://3.python-requests.org/), [*django*](https://www.djangoproject.com/) or [*jinja*](https://jinja.palletsprojects.com) - *Don't reinvent the wheel* to avoid mistakes (that others have already made) and save resources. For installing third party modules use [*pip*](https://docs.python.org/3/installing/index.html).
 
-Python supports various programming paradigms: On the one side [*functional programming*](https://docs.python.org/3/howto/functional.html) is supported by the [*modules*](https://docs.python.org/3/library/functional.html) [*itertools*](https://docs.python.org/3/library/itertools.html) (see also package [more-itertools](https://pypi.org/project/more-itertools/)), [*functools*](https://docs.python.org/3/library/functools.html) and [*operator*](https://docs.python.org/3/library/operator.html) containing higher-order functions. On the other hand Python is an object-oriented programming language with its use of [*class*](https://docs.python.org/3/tutorial/classes.html)-based approach (see also [*abstract base classes*](https://docs.python.org/3/library/abc.html)). The behavior of classes can be customized by [*descriptors*](https://docs.python.org/3/howto/descriptor.html).
+Python supports various programming paradigms. On the one side Python supports [*functional programming*](https://docs.python.org/3/howto/functional.html) with [*modules*](https://docs.python.org/3/library/functional.html) like [*itertools*](https://docs.python.org/3/library/itertools.html) (see also package [more-itertools](https://pypi.org/project/more-itertools/)), [*functools*](https://docs.python.org/3/library/functools.html) as well as [*operator*](https://docs.python.org/3/library/operator.html) containing higher-order functions and on the other one object-oriented programming with its use of [*classes*](https://docs.python.org/3/tutorial/classes.html) (see also [*abstract base classes*](https://docs.python.org/3/library/abc.html)).
 
 **Further Reading**
 
@@ -84,9 +84,3 @@ To achieve *Mastery*, firstly, you need to become an expert within certain field
 *Mastery* is also characterized by providing *simple* domain-specific solutions to complex tasks, which may result in new trends. The knowledge and skills then mostly extend beyond pure Python programming and includes, for example, working with large code basis, designing complex software architectures, leading programming teams or maintaining software systems.
 
 Due to the long and fluent process of develop knowledge, skills and experience, one does not really notice at what point the master degree is reached. It's more likely to be *"awarded"* by someone else.
-
-## Further Resources
-
-The references used in the text are of course only a small part. A good source for Python projects is [*github.com*](https://https://github.com). Using online search engine may also yield other interesting content, for example (works for at least google, startpage, duckduckgo): *site:github.com awesome python3*
-
-More content can be found at [*YouTube*](https://youtube.com), e. g. searching [*Python3 Tricks*](https://www.youtube.com/results?search_query=python3+tricks) or under [*realpython.com*](https://realpython.com/) with many tutorials. If you like to read,there are several publishers that offer books about Python: [*no starch press*](https://nostarch.com/), [*O'Reilly*](https://www.oreilly.com/), [*Packt>*](https://www.packtpub.com/), [*Manning Publications*](https://www.manning.com/). 
