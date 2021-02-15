@@ -4,13 +4,13 @@
 
 *Pymp My Coding Skills* is a collection of tips, tricks and references to improve Python programming skills. The content of this repository is intended for programmers at *Level 3* according to [*Mastering Python: A Quick Guide*](https://github.com/GhostActive/PympMyCodingSkills/blob/main/mastering-python.md) and requires an advanced knowledge about Python. If you are not at this level yet, then it's recommended to work through the contents of *Level 1* and *Level 2*.
 
-### Content
+## Content
 
 The content is divided into distinct chapters, each covering a specific aspect of Python.
 
 * [*dict*](https://github.com/GhostActive/PympMyCodingSkills/blob/main/content/dict.md) - Working with standard type [*dictionary*](https://docs.python.org/3/library/stdtypes.html#mapping-types-dict)
 
-### Resources
+## Resources
 
 A good source for Python projects is [*github.com*](https://https://github.com). Using online search engine may also yield other interesting content, for example (works for at least google, startpage, duckduckgo): *site:github.com awesome python3*
 
@@ -24,10 +24,6 @@ A short list with personal recommendations:
 
 Further books, depending on programming level, can be found in [*Mastering Python: A Quick Guide*](https://github.com/GhostActive/PympMyCodingSkills/blob/main/mastering-python.md) (see *Level 1* to *Level 3*)
 
-### Similiar Projects
+## Similiar Projects
 
 * [*Pymp My Pentest*](https://github.com/GhostActive/PympMyPentest)
-
-
-
-

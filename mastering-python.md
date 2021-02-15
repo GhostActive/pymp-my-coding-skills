@@ -10,7 +10,6 @@
 - [*Level 2*](#transition): Transition
 - [*Level 3*](#practice-and-improvement): Practice and Improvement
 - [*Level 4*](#mastery): Mastery
-- [*Further Resources*](#further-resources)
 
 ## Introduction
 
