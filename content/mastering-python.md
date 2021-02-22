@@ -28,8 +28,6 @@ How long the process takes to become a *master* depends on your ability and capa
 
 ## The Beginning 
 
-> **Characteristics**: Phase of 1 to 3 months with rapid knowledge building
->
 > **Note**: Be careful. At the beginning, it can quickly become a mass of things to learn so you feel overwhelmed and stupid. Take the time you need - One topic at a time, not all at once.
 
 If you're new, than first things first. Learn the basics and core principles about Python. A simple way to start is working through the [*Tutorial*](https://docs.python.org/3.8/tutorial/index.html) within the [*Python Documentation*](https://docs.python.org/3/). The official documentation contains a lot of useful knowledge and is worth a look. Alternatively, there are a lots of stuff on [*YouTube*](https://www.youtube.com/results?search_query=python3+tutorial) or within online courses. If you prefer reading than have a look to Mark Lutz's *Learning Python* (see *Further Reading*). As an IDE [*PyCharm*](https://www.jetbrains.com/pycharm/) is a good choice - The community edition is free available.
@@ -44,9 +42,9 @@ For a good programming style you should also know the following [*Python Enhance
 
 ## Transition
 
-> **Characteristics**: May last up to one year - Basic and advanced education about Pyhton with a steep learning curve
-
 Besides [*built-in types*](https://docs.python.org/3/library/stdtypes.html), [*built-in functions*](https://docs.python.org/3/library/functions.html) and [*built-in exceptions*](https://docs.python.org/3/library/exceptions.html) Python offers many modules within the [*standard libraries*](https://docs.python.org/3/library/index.html) for use, e.g.  [*string*](https://docs.python.org/3/library/string.html), [*enum*](https://docs.python.org/3/library/enum.html), [*collections*](https://docs.python.org/3/library/collections.html), [*argparse*](https://docs.python.org/3/library/argparse.html), [*sys*](https://docs.python.org/3/library/sys.html), [*os*](https://docs.python.org/3/library/os.html), [*logging*](https://docs.python.org/3/library/logging.html), [*subprocess*](https://docs.python.org/3/library/subprocess.html), [*json*](https://docs.python.org/3/library/json.html) and many more. If the standard libraries are not enough, then there are numerous frameworks from third parties like [*requests*](https://3.python-requests.org/), [*django*](https://www.djangoproject.com/) or [*jinja*](https://jinja.palletsprojects.com) - *Don't reinvent the wheel* to avoid mistakes (that others have already made) and save resources. For installing third party modules use [*pip*](https://docs.python.org/3/installing/index.html).
+
+> **Note**: It happens from time to time that (third party) libraries contain backdoors or vulnerabilities in general that can be exploited by attackers. Always be careful and inform if there are known ones, e.g. under [*CVE Details*](https://www.cvedetails.com/) or search for "*<your framework> vulnerability*".
 
 Python supports various programming paradigms. On the one side Python supports [*functional programming*](https://docs.python.org/3/howto/functional.html) with [*modules*](https://docs.python.org/3/library/functional.html) like [*itertools*](https://docs.python.org/3/library/itertools.html) (see also package [more-itertools](https://pypi.org/project/more-itertools/)), [*functools*](https://docs.python.org/3/library/functools.html) as well as [*operator*](https://docs.python.org/3/library/operator.html) containing higher-order functions and on the other one object-oriented programming with its use of [*classes*](https://docs.python.org/3/tutorial/classes.html) (see also [*abstract base classes*](https://docs.python.org/3/library/abc.html)).
 
@@ -57,8 +55,6 @@ Python supports various programming paradigms. On the one side Python supports [
 * [*Python Object-Orientated Programming*](https://www.packtpub.com/product/python-3-object-oriented-programming-third-edition/9781789615852) by Dusty Phillips
 
 ## Practice and Improvement
-
-> **Characteristics**: Two until three years, flat learning curve, autonomy is formed, patience and persistence
 
 The last two sections were about *content*. This and the next section focus the *context* - the big picture. Two definitive factors for context within scripting and software development are *effectiveness* and *efficiency:*
 
@@ -75,8 +71,6 @@ Building a solid foundation requires practice by reading other's code, writing o
 * [*Clean Code in Python*](https://www.packtpub.com/product/clean-code-in-python/9781788835831) by Mariano Anaya
 
 ## Mastery
-
-> **Characteristics**: If you have successfully reached here, then you know what should be written here.
 
 To achieve *Mastery*, firstly, you need to become an expert within certain fields of a specific domain by developing deep understanding. At this point, learning is a livelong process repeating the four levels from beginner to mastery. Repeating the previous items with a higher level yields new perspectives and ideas.
 
