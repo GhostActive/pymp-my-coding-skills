@@ -6,8 +6,6 @@
 
 ## Content
 
-Articles
-
 * [*Mastering Python: A Quick Guide*](https://github.com/GhostActive/PympMyCodingSkills/blob/main/content/mastering-python.md)
 
 The tips and tricks stuff is divided into  chapters, each covering a specific aspect of Python.
