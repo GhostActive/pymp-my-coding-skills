@@ -8,7 +8,7 @@
 
 * [*Mastering Python: A Quick Guide*](https://github.com/GhostActive/PympMyCodingSkills/blob/main/content/mastering-python.md)
 
-The tips and tricks stuff is divided into  chapters, each covering a specific aspect of Python.
+The tips and tricks stuff is divided into  chapters, each covering a specific aspect of Python:
 
 * [*dict*](https://github.com/GhostActive/PympMyCodingSkills/blob/main/content/dict.md) - Working with standard type [*dictionary*](https://docs.python.org/3/library/stdtypes.html#mapping-types-dict)
 
