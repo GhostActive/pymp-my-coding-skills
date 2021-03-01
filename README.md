@@ -1,6 +1,7 @@
 # Pymp My Coding Skills
 
 [![Version v1.0](https://img.shields.io/badge/Version-1.0-brightgreen)](https://github.com/GhostActive/PympMyCodingSkills)
+[![Python](https://img.shields.io/badge/Python-3.X-blue)](https://docs.python.org/3/index.html)
 
 > **Disclaimer**: The publishers and books mentioned in the repository are a personal choice that don't bring any provision.
 
