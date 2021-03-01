@@ -1,5 +1,7 @@
 # Pymp My Coding Skills
 
+![Version 1.0](https://img.shields.io/badge/Version-1.0-green)
+
 > **Disclaimer**: The publishers and books mentioned in the repository are a personal choice that don't bring any provision.
 
 *Pymp My Coding Skills* is a collection of tips, tricks and references to improve your programming skills in Python. The content of this repository is intended for advanced programmers and requires fundamental knowledge about Python - Comparable to Level 2 in [*Mastering Python: A Quick Guide*](https://github.com/GhostActive/PympMyCodingSkills/blob/main/content/mastering-python.md). If you are not at this level yet, then it's recommended to work through the content of Level 1 and 2 to understand and the topics correctly.
@@ -25,3 +27,5 @@ Further books, depending on programming level, can be found in [*Mastering Pytho
 ## Similiar Projects
 
 * [*Pymp My Pentest*](https://github.com/GhostActive/PympMyPentest)
+
+[![Creative Commons License](https://licensebuttons.net/l/by-sa/4.0/88x31.png)](https://creativecommons.org/licenses/by-sa/4.0/ "CC BY-SA 4.0")
