@@ -1,6 +1,6 @@
 # Pymp My Coding Skills
 
-![Version 1.0](https://img.shields.io/badge/Version-1.0-green)
+![Version v1.0](https://img.shields.io/badge/Version-1.0-brightgreen)
 
 > **Disclaimer**: The publishers and books mentioned in the repository are a personal choice that don't bring any provision.
 
