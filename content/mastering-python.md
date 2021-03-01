@@ -59,11 +59,11 @@ Python supports various programming paradigms. On the one side Python supports [
 The last two sections were about *content*. This and the next section focus the *context* - the big picture. Two definitive factors for context within scripting and software development are *effectiveness* and *efficiency:*
 
 * Effectiveness - What are the correct items (e.g. build-ins, modules or frameworks) to build a good solution?
-* Efficiency - What does a good solution looks like?
+* Efficiency - What does a way looks like to implement and run a good solution?
 
 Implicitly, both terms covers numerous dimensions in software development, e.g. use cases, requirements, software architecture, complexity, performance and resource consumption. In programming, one speaks of *"clean code"* and *"clean architecture"*. Especially for Python the term and meaning of *"pythonic"* should be known.
 
-Building a solid foundation requires practice by reading other's code, writing own code and refactor bad code. Improvement comes with the analysis of existing solutions and finding a better one. Furthermore, to find a good or even the best solution requires beside knowledge and skills the third keystone: Experience - The ability to know what not to do. Always have the inner attitude to produce *"clean code"*, including useful documentation and testing.
+Building a solid foundation requires practice by reading other's code, writing own code and refactor bad code. Improvement comes with the analysis of existing solutions and finding a better one. Furthermore, to find a good or even the best solution requires beside knowledge and skills the third aspect: Experience - The ability to know what not to do. Always have the inner attitude to produce *"clean code"*, including useful documentation and testing.
 
 **Further Reading**
 
@@ -72,7 +72,7 @@ Building a solid foundation requires practice by reading other's code, writing o
 
 ## Mastery
 
-To achieve *Mastery*, firstly, you need to become an expert within certain fields of a specific domain by developing deep understanding. At this point, learning is a livelong process repeating the four levels from beginner to mastery. Repeating the previous items with a higher level yields new perspectives and ideas.
+To achieve *Mastery*, firstly, you need to become an expert within one or more fields of a specific domain by developing deep understanding. At this point, learning is a livelong process to handle new technologies and stay up to date. Repeating the items from beginner to master on a higher level can also yields new perspectives.
 
 *Mastery* is also characterized by providing *simple* domain-specific solutions to complex tasks, which may result in new trends. The knowledge and skills then mostly extend beyond pure Python programming and includes, for example, working with large code basis, designing complex software architectures, leading programming teams or maintaining software systems.
 
