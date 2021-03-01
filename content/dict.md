@@ -17,7 +17,7 @@ To a certain degree, aspects of both paradigms can be integrated into the implem
 
 ### Conclusion
 
-The use of `dict` or `class` depends on the programming paradigm. Practically, however, programming skills are more important then the theory behind. Dictionaries are efficient if you understand functional programming. Otherwise, the implementation can become very complex, confusing or even an imitation of object-oriented style. In this case use a class-based implementation.
+The use of `dict` or `class` depends on the programming paradigm. Practically, however, programming skills are more important then the theory behind. Dictionaries are efficient if you understand functional programming. Otherwise, the implementation can become very complex, confusing or even an imitation of object-oriented style. In this case use a class-based implementation. If you use frameworks, then do it the way it is intended to be done.
 
 ## Item 2: Prefer `operator.itemgetter` over `__getitem__`
 
@@ -220,8 +220,6 @@ def default_itemgetter(**kwargs):
     return wrapped
 ```
 
-**Note** that the wrapper method, shown above, only supports key arguments of data type `str`. Furthermore, the parameter `obj` must be a `dict`-based object.
-
 ### Examples
 
 ```python
@@ -398,4 +396,4 @@ Entertainment (1)
 
 ### Conclusion
 
-Despite the increasing complexity of the examples, the complexity of the solutions are still quite simple. However, the solutions require some knowledge about Python and abstraction. The trick at this point is not to think of the requirements as a ordered sequence of statements for implementation. Abstract thinking from the end is the key. The [*functional programming modules*](https://docs.python.org/3/library/functional.html) can be useful for implementation including further recipes.
+Despite the increasing complexity of the examples, the complexity of the solutions are still quite simple. However, the solutions require some knowledge about Python and abstraction. The trick at this point is not to think of the tasks as a ordered sequence of statements. Abstract thinking and handling [*functional programming*](https://docs.python.org/3/howto/functional.html) is the key.
