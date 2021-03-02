@@ -402,4 +402,4 @@ Despite the increasing complexity of the examples, the complexity of the solutio
 ## See also
 
 * [*collections*](https://docs.python.org/3/library/collections.html) module - Container datatypes
-* [*collections.abc*](https://docs.python.org/3/library/collections.abc.html) module - Abstract Base Classes for Containers¶
+* [*collections.abc*](https://docs.python.org/3/library/collections.abc.html) module - Abstract Base Classes for Containers
