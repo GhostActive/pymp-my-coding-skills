@@ -10,6 +10,7 @@
 - [*Level 2*](#transition): Transition
 - [*Level 3*](#practice-and-improvement): Practice and Improvement
 - [*Level 4*](#mastery): Mastery
+- [*Notes*](#notes)
 
 ## Introduction
 
@@ -27,8 +28,6 @@ Get an expert in certain fields by developing a deep understanding of a specific
 How long the process takes to become a *master* depends on your ability and capacity to learn. If you want to be really good, it lasts several years. Maybe you have someone who can support you. But the most important thing: Start and keep moving forward.
 
 ## The Beginning 
-
-> **Note**: Be careful. At the beginning, it can quickly become a mass of things to learn so you feel overwhelmed and stupid. Take the time you need - One topic at a time, not all at once.
 
 If you're new, than first things first. Learn the basics and core principles about Python. A simple way to start is working through the [*Tutorial*](https://docs.python.org/3.8/tutorial/index.html) within the [*Python Documentation*](https://docs.python.org/3/). The official documentation contains a lot of useful knowledge and is worth a look. Alternatively, there are a lots of stuff on [*YouTube*](https://www.youtube.com/results?search_query=python3+tutorial) or within online courses. If you prefer reading than have a look to Mark Lutz's *Learning Python* (see *Further Reading*). As an IDE [*PyCharm*](https://www.jetbrains.com/pycharm/) is a good choice - The community edition is free available.
 
@@ -77,3 +76,9 @@ To achieve *Mastery*, firstly, you need to become an expert within one or more f
 *Mastery* is also characterized by providing *simple* domain-specific solutions to complex tasks, which may result in new trends. The knowledge and skills then mostly extend beyond pure Python programming and includes, for example, working with large code basis, designing complex software architectures, leading programming teams or maintaining software systems.
 
 Due to the long and fluent process of develop knowledge, skills and experience, one does not really notice at what point the master degree is reached. It's more likely to be *"awarded"* by someone else.
+
+## Notes
+
+- Learn only one thing at a time, not all at once. Especially at the beginning, it can quickly become a mass of things to learn so you feel overwhelmed and stupid. Take the time you need.
+- Programming is a skill, and a skill is learned by practice and repetition. The road to *mastery* is long and full of challenges. Constant learning and overcoming obstacles is what makes you become good.
+- A smart way to gain practical knowledge is to explore publicly available projects (e.g. on [*github*](https://github.com/)). Participate to open-source projects or create your own.
