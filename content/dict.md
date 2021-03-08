@@ -6,6 +6,7 @@
 * [*Item 4*](#item-4-get-item-or-default): Get item or default
 * [*Item 5*](#item-5-walking-trough-nested-dictionaries): Walking trough nested dictionaries
 * [*Item 6*](#item-6-complex-operations-on-dictionaries): Complex operations on dictionaries
+* [*See Also*](#see-also)
 
 ## Item 1: `dict` vs. `class`
 
@@ -397,3 +398,8 @@ Entertainment (1)
 ### Conclusion
 
 Despite the increasing complexity of the examples, the complexity of the solutions are still quite simple. However, the solutions require some knowledge about Python and abstraction. The trick at this point is not to think of the tasks as a ordered sequence of statements. Abstract thinking and handling [*functional programming*](https://docs.python.org/3/howto/functional.html) is the key.
+
+## See also
+
+* [*collections*](https://docs.python.org/3/library/collections.html) module - Container datatypes
+* [*collections.abc*](https://docs.python.org/3/library/collections.abc.html) module - Abstract Base Classes for Containers
