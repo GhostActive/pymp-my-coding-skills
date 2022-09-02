@@ -26,8 +26,4 @@ A good resource for (open-source) projects is [*github.com*](https://https://git
 
 Further books, depending on programming level, can be found in [*Mastering Python: A Quick Guide*](https://github.com/GhostActive/PympMyCodingSkills/blob/main/content/mastering-python.md) (see *Level 1* to *Level 3*).
 
-## Similiar Projects
-
-* [*Pymp My Pentest*](https://github.com/GhostActive/PympMyPentest)
-
 [![Creative Commons License](https://licensebuttons.net/l/by-sa/4.0/88x31.png)](https://creativecommons.org/licenses/by-sa/4.0/ "CC BY-SA 4.0")
